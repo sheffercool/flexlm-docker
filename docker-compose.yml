@@ -1,0 +1,15 @@
+version: '2'
+services:
+  flex:
+    build: flexlm
+    mac_address: 85:4C:F0:D3:91:2E
+    hostname: flexlm
+    environment:
+      CERTS: /licenses/femap-license.dat
+    volumes:
+      - ./licenses:/licenses
+      - ./vendors:/vendors
+    ports:
+      - "2080:2080"
+      - "27000-27009:27000-27009"
+    restart: always
